@@ -11,8 +11,9 @@ Docs: [Using the Mux MCP Server](https://www.mux.com/docs/integrations/mcp-serve
 ## What you get
 
 - **Connector** — one MCP server (`mux`) at `https://mcp.mux.com`. Cursor’s Connect flow runs Mux OAuth (dashboard.mux.com login + environment picker). No access token in the plugin.
-- **Skills** — routers that teach the agent to use Mux Code Mode (`search_docs` + `execute` against `@mux/ts`):
+- **Skills** — routers that teach the agent to use Mux Code Mode (`search_docs` + `execute` against `@mux/ts`), plus docs discovery from [muxinc/skills](https://github.com/muxinc/skills):
   - `mux` — bootstrap, auth model, safety, routing
+  - `mux-docs` — **upstream** docs discovery (llms.txt / collection indexes); prefer for API/docs questions
   - `mux-video` — assets, direct uploads, playback IDs, tracks, signing / secure playback, delivery usage
   - `mux-robots` — Robots jobs on an existing Mux asset
   - `mux-robots-directives` — compose Directives pipelines (multi-workflow, attach on ingest)
@@ -113,15 +114,46 @@ When ready to publish under the muxinc org:
 3. Submit the marketplace repo; `plugins/mux` is the package Cursor loads (see `.cursor-plugin/marketplace.json`).
 4. After approval, install from the Marketplace and verify OAuth Connect.
 
+## Upstream skills ([muxinc/skills](https://github.com/muxinc/skills))
+
+This plugin vendors selected skills from the official Mux skills repo and keeps Cursor-specific skills locally.
+
+| Skill folder | Origin | Notes |
+| --- | --- | --- |
+| `mux-docs` | **Upstream** (`muxinc/skills` → `skills/mux-docs`) | Upstream frontmatter `name` is `mux-video`; vendored as folder + `name: mux-docs` so it does not collide with our `mux-video` skill |
+| `mux` | Plugin-only | Bootstrap / routing |
+| `mux-video` | Plugin-only | Video API via MCP Code Mode |
+| `mux-live` | Plugin-only | Live streams |
+| `mux-data` | Plugin-only | Mux Data |
+| `mux-analyze-any-video` | Plugin-only | Robots on any source |
+| `mux-robots` | Plugin-only | Robots on an existing asset |
+| `mux-robots-directives` | Plugin-only | Directives pipelines |
+
+### Sync upstream
+
+From the repo root:
+
+```bash
+./scripts/sync-upstream-skills.sh
+```
+
+The script sparse-clones (or curls) `muxinc/skills` `skills/*` into `plugins/mux/skills/`, remaps `mux-docs` frontmatter `name` to `mux-docs`, and **never overwrites** the plugin-only folders listed above. Optional: `UPSTREAM_REF=main` / `UPSTREAM_REPO=...`.
+
+After syncing, re-copy the plugin folder into `~/.cursor/plugins/local/mux` for local testing (see Install).
+
 ## Repo layout
+
 
 ```text
 .cursor-plugin/marketplace.json   # marketplace owner + plugin list
+scripts/sync-upstream-skills.sh   # pull muxinc/skills → plugins/mux/skills
 plugins/mux/                      # package Cursor loads
   .cursor-plugin/plugin.json
   mcp.json
   assets/logo.svg
-  skills/*/SKILL.md
+  skills/
+    mux-docs/SKILL.md             # upstream (vendored; name remapped)
+    mux/, mux-video/, …           # plugin-only
   README.md
 LICENSE
 README.md

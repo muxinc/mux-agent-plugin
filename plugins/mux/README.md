@@ -14,15 +14,18 @@ For non-OAuth clients, use Basic `TOKEN_ID:TOKEN_SECRET` against the hosted URL,
 
 ## Skills
 
-| Skill | Use for |
-| --- | --- |
-| `mux` | Bootstrap, Code Mode (`search_docs` + `execute`), auth, safety, routing |
-| `mux-video` | Assets, direct uploads, playback IDs, tracks, signing keys, delivery usage, DRM |
-| `mux-robots` | Robots jobs on an existing Mux asset (summarize, chapters, captions, …) |
-| `mux-robots-directives` | Compose Directives pipelines (workflows, resources, attach on ingest) |
-| `mux-analyze-any-video` | Robots on any source: ingest URL/local file into Mux when needed, then analyze |
-| `mux-live` | Live streams, stream keys, simulcast, reconnect windows, recording |
-| `mux-data` | Metrics, dimensions, filters, video views, real-time, exports, errors |
+| Skill | Origin | Use for |
+| --- | --- | --- |
+| `mux` | Plugin-only | Bootstrap, Code Mode (`search_docs` + `execute`), auth, safety, routing |
+| `mux-docs` | Upstream ([muxinc/skills](https://github.com/muxinc/skills)) | API/docs questions via llms.txt / collection indexes (vendored as `mux-docs`; upstream name was `mux-video`) |
+| `mux-video` | Plugin-only | Assets, direct uploads, playback IDs, tracks, signing keys, delivery usage, DRM |
+| `mux-robots` | Plugin-only | Robots jobs on an existing Mux asset (summarize, chapters, captions, …) |
+| `mux-robots-directives` | Plugin-only | Compose Directives pipelines (workflows, resources, attach on ingest) |
+| `mux-analyze-any-video` | Plugin-only | Robots on any source: ingest URL/local file into Mux when needed, then analyze |
+| `mux-live` | Plugin-only | Live streams, stream keys, simulcast, reconnect windows, recording |
+| `mux-data` | Plugin-only | Metrics, dimensions, filters, video views, real-time, exports, errors |
+
+Refresh upstream skills from the repo root with `./scripts/sync-upstream-skills.sh` (skips plugin-only folders).
 
 ## How the MCP works
 

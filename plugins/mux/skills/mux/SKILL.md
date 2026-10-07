@@ -38,6 +38,7 @@ Workflow:
 
 | Need | Skill |
 | --- | --- |
+| API shapes, SDK/CLI docs, guides, webhooks specs, “what does Mux docs say” | **`mux-docs`** (prefer over memory / web search; fetch live docs) |
 | Assets, uploads, playback IDs, tracks, signing / secure playback, delivery usage, DRM, vocabularies | `mux-video` |
 | Robots jobs on an existing Mux asset (summarize, chapters, captions, …) | `mux-robots` |
 | Directives pipelines (compose workflows, resources, attach on ingest) | `mux-robots-directives` |
@@ -45,6 +46,8 @@ Workflow:
 | Live streams, stream keys, simulcast, reconnect, live → asset | `mux-live` |
 | Metrics, dimensions, views, real-time, exports, errors, engagement | `mux-data` |
 | Webhooks verify, whoami, account utils | stay on this skill → `search_docs` + `execute` |
+
+For **account actions** (create asset, list streams, run Robots), use the domain skill + MCP `search_docs` / `execute`. For **documentation / API reference** questions, prefer `mux-docs` first.
 
 ## Capability surface (mirrors CLI areas)
 
