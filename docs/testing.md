@@ -23,8 +23,8 @@ Confirm:
 Enable **Include third-party Plugins, Skills, and other configs**. Reload the
 window.
 
-Settings → Plugins should list **Mux Agent Plugin**. Tools & MCP should show a
-single `mux` server.
+Settings → Plugins should list **Mux**. Tools & MCP should show a single `mux`
+server.
 
 ### Connect
 

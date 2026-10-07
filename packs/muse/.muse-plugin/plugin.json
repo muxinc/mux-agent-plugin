@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "name": "mux",
-  "displayName": "Mux Agent Plugin",
+  "displayName": "Mux",
   "version": "1.0.0",
-  "description": "Mux Agent Plugin: remote MCP plus skills for Video, Live, Data, and Robots",
+  "description": "Connect to Mux with the official remote MCP connector and skills for Video, Live Streams, Mux Data, and Robots.",
   "compat": {
     "source": "native",
     "manifestDir": ".muse-plugin"
@@ -53,5 +53,9 @@
       }
     ],
     "reminders": []
+  },
+  "author": {
+    "name": "Mux",
+    "email": "devex@mux.com"
   }
 }

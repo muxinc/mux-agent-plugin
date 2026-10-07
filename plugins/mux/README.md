@@ -1,6 +1,6 @@
-# Mux Agent Plugin
+# Mux
 
-**Mux Agent Plugin** for Cursor (and the same skills/MCP used across Grok Bot, Claude Code, Codex, and Muse): **MCP connector** plus **skills** for Video, Live Streams, Mux Data, and Robots.
+Official **Mux** plugin for Cursor (same MCP and skills used across Grok Bot, Claude Code, Codex, and Muse): **MCP connector** plus **skills** for Video, Live Streams, Mux Data, and Robots.
 
 Install from the [Cursor Marketplace](https://cursor.com/marketplace) (when published) and follow [Using the Mux MCP Server](https://www.mux.com/docs/integrations/mcp-server). This folder is the package Cursor loads. Source: [muxinc/cursor-plugin](https://github.com/muxinc/cursor-plugin).
 

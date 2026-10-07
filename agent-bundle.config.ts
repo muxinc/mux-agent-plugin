@@ -19,7 +19,7 @@ export default defineConfig({
   plugin: {
     name: 'mux',
     description:
-      'Mux Agent Plugin: remote MCP connector plus skills for Video, Live Streams, Mux Data, and Robots — for Cursor, Grok Bot, Claude Code, Codex, and Muse.',
+      'Connect to Mux with the official remote MCP connector and skills for Video, Live Streams, Mux Data, and Robots.',
     logo: 'plugins/mux/assets/logo.png',
     metadata: {
       author: { name: 'Mux', email: 'devex@mux.com' },
@@ -57,6 +57,23 @@ export default defineConfig({
         transport: 'streamable-http',
         url: 'https://mcp.mux.com',
       },
+    },
+  },
+  // Host UI titles: always "Mux" (plugin.id stays mux).
+  claude: {
+    displayName: 'Mux',
+    marketplace: {
+      plugin: {
+        displayName: 'Mux',
+      },
+    },
+  },
+  codex: {
+    interface: {
+      displayName: 'Mux',
+    },
+    marketplace: {
+      displayName: 'Mux',
     },
   },
   targets: ['claude', 'codex', 'cursor', 'portable'],
