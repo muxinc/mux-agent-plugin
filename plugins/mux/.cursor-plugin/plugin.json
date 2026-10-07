@@ -1,0 +1,24 @@
+{
+  "name": "mux",
+  "displayName": "Mux",
+  "version": "1.0.0",
+  "description": "Connect Cursor to Mux with the official remote MCP connector and skills for Video, Live Streams, Mux Data, and Robots.",
+  "author": {
+    "name": "Mux",
+    "email": "open-source@mux.com"
+  },
+  "homepage": "https://www.mux.com/docs/integrations/mcp-server",
+  "repository": "https://github.com/muxinc/cursor-plugin",
+  "license": "MIT",
+  "keywords": [
+    "mux",
+    "video",
+    "live-streaming",
+    "mux-data",
+    "mcp",
+    "uploads",
+    "playback",
+    "robots"
+  ],
+  "logo": "assets/logo.svg"
+}

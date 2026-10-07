@@ -1,0 +1,18 @@
+{
+  "name": "mux",
+  "owner": {
+    "name": "Mux",
+    "email": "open-source@mux.com"
+  },
+  "metadata": {
+    "description": "Official Mux plugins for Cursor — remote MCP connector plus skills for Video, Live, Data, and Robots.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "mux",
+      "source": "./plugins/mux",
+      "description": "Connect Cursor to Mux: remote MCP at mcp.mux.com plus skills for video assets, live streams, Mux Data, and Code Mode."
+    }
+  ]
+}
