@@ -1,0 +1,44 @@
+{
+  "name": "mux-cursor-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mux remote MCP connector plus skills for Video, Live, Data, and Robots — packaged for Cursor, Claude Code, Codex, portable Agent Plugins, and Muse Code.",
+  "license": "MIT",
+  "type": "module",
+  "author": {
+    "name": "Mux",
+    "email": "open-source@mux.com"
+  },
+  "homepage": "https://www.mux.com/docs/integrations/mcp-server",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muxinc/cursor-plugin"
+  },
+  "keywords": [
+    "mux",
+    "video",
+    "live-streaming",
+    "mux-data",
+    "mcp",
+    "uploads",
+    "playback",
+    "robots",
+    "cursor",
+    "claude",
+    "codex",
+    "muse"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "build": "agent-bundle build",
+    "validate": "agent-bundle validate",
+    "check": "npm run validate && npm run build",
+    "inspect": "agent-bundle inspect",
+    "dev": "agent-bundle dev"
+  },
+  "devDependencies": {
+    "agent-bundle": "https://pkg.pr.new/ScriptedAlchemy/agent-bundle/agent-bundle@bf98f04f4620b8ff416f040245c6b7a007b7a677"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "mux",
+  "displayName": "Mux",
+  "version": "1.0.0",
+  "description": "Mux remote MCP plus skills for Video, Live, Data, and Robots",
+  "compat": {
+    "source": "native",
+    "manifestDir": ".muse-plugin"
+  },
+  "capabilities": {
+    "skills": [
+      {
+        "id": "mux",
+        "path": "skills/mux"
+      },
+      {
+        "id": "mux-analyze-any-video",
+        "path": "skills/mux-analyze-any-video"
+      },
+      {
+        "id": "mux-data",
+        "path": "skills/mux-data"
+      },
+      {
+        "id": "mux-docs",
+        "path": "skills/mux-docs"
+      },
+      {
+        "id": "mux-live",
+        "path": "skills/mux-live"
+      },
+      {
+        "id": "mux-robots",
+        "path": "skills/mux-robots"
+      },
+      {
+        "id": "mux-robots-directives",
+        "path": "skills/mux-robots-directives"
+      },
+      {
+        "id": "mux-video",
+        "path": "skills/mux-video"
+      }
+    ],
+    "commands": [],
+    "hooks": [],
+    "mcpServers": [
+      {
+        "id": "mux",
+        "transport": "http",
+        "url": "https://mcp.mux.com"
+      }
+    ],
+    "reminders": []
+  }
+}

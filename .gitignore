@@ -13,4 +13,10 @@
 tmp/
 temp/
 agent-tools/
+
+# Node / Agent Bundle
 node_modules/
+artifact/
+dist/
+.agent-bundle/
+*.tgz
