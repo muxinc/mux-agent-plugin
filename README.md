@@ -14,6 +14,8 @@ Docs: [Using the Mux MCP Server](https://www.mux.com/docs/integrations/mcp-serve
 - **Skills** — routers that teach the agent to use Mux Code Mode (`search_docs` + `execute` against `@mux/ts`):
   - `mux` — bootstrap, auth model, safety, routing
   - `mux-video` — assets, direct uploads, playback IDs, tracks, signing / secure playback, delivery usage
+  - `mux-robots` — Robots jobs on an existing Mux asset
+  - `mux-robots-directives` — compose Directives pipelines (multi-workflow, attach on ingest)
   - `mux-analyze-any-video` — Robots on any source (ingest URL/local file when needed, then analyze)
   - `mux-live` — live streams, simulcast, reconnect, recording to assets
   - `mux-data` — metrics, dimensions, video views, real-time, exports, errors

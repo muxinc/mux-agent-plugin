@@ -67,6 +67,6 @@ For auto-run on ingest, attach directive IDs when creating the asset/upload (`ne
 
 ## Out of scope
 
-- Already-Mux assets with no ingest needed → still fine here, or bootstrap `mux` for Robots-only
+- Already-Mux assets with no ingest needed → `mux-robots` (or stay here if already mid-flow)
 - Pure asset/upload management without Robots → `mux-video`
 - Live ingest → `mux-live`

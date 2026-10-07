@@ -39,10 +39,12 @@ Workflow:
 | Need | Skill |
 | --- | --- |
 | Assets, uploads, playback IDs, tracks, signing / secure playback, delivery usage, DRM, vocabularies | `mux-video` |
+| Robots jobs on an existing Mux asset (summarize, chapters, captions, …) | `mux-robots` |
+| Directives pipelines (compose workflows, resources, attach on ingest) | `mux-robots-directives` |
 | Analyze / Robots on a URL, local file, or non-Mux video (ingest first when needed) | `mux-analyze-any-video` |
 | Live streams, stream keys, simulcast, reconnect, live → asset | `mux-live` |
 | Metrics, dimensions, views, real-time, exports, errors, engagement | `mux-data` |
-| Robots jobs / workflows / directives on an existing Mux asset; webhooks verify, whoami, account utils | stay on this skill → `search_docs` + `execute` |
+| Webhooks verify, whoami, account utils | stay on this skill → `search_docs` + `execute` |
 
 ## Capability surface (mirrors CLI areas)
 
