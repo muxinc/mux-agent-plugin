@@ -39,7 +39,7 @@ export default defineConfig({
     metadata: {
       author: { name: 'Mux', email: 'devex@mux.com' },
       homepage: 'https://www.mux.com/docs/integrations/mcp-server',
-      repository: 'https://github.com/muxinc/cursor-plugin',
+      repository: 'https://github.com/muxinc/mux-agent-plugin',
       license: 'MIT',
       keywords: [
         'mux',

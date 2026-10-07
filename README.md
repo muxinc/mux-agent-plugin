@@ -6,7 +6,7 @@ Live Streams, Mux Data, and Robots. On every host the user-facing display name i
 **Mux** (plugin id `mux`).
 
 Canonical repository (placeholder until published):
-[github.com/muxinc/cursor-plugin](https://github.com/muxinc/cursor-plugin)
+[github.com/muxinc/mux-agent-plugin](https://github.com/muxinc/mux-agent-plugin)
 
 Docs: [Using the Mux MCP Server](https://www.mux.com/docs/integrations/mcp-server)
 
@@ -234,7 +234,7 @@ live-stream teardown with the user.
 
 When ready to publish under the muxinc org:
 
-1. Push this repo to `https://github.com/muxinc/cursor-plugin` (or your chosen name).
+1. Push this repo to `https://github.com/muxinc/mux-agent-plugin` (or your chosen name).
 2. Open [cursor.com/marketplace/publish](https://cursor.com/marketplace/publish).
 3. Submit the marketplace repo; `plugins/mux` is the package Cursor loads
    (see `.cursor-plugin/marketplace.json`).
