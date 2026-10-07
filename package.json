@@ -2,7 +2,7 @@
   "name": "mux-agent-plugin",
   "version": "1.0.0",
   "private": true,
-  "description": "Mux remote MCP connector plus skills for Video, Live, Data, and Robots — packaged for Cursor, Claude Code, Codex, portable Agent Plugins, and Muse Code.",
+  "description": "Mux remote MCP connector plus skills for Video, Live, Data, and Robots \u2014 packaged for Cursor, Claude Code, Codex, portable Agent Plugins, and Muse Code.",
   "license": "MIT",
   "type": "module",
   "author": {
@@ -32,11 +32,12 @@
     "node": ">=22.19.0"
   },
   "scripts": {
-    "build": "agent-bundle build",
+    "build": "agent-bundle build && npm run fix:display-names",
     "validate": "agent-bundle validate",
     "check": "npm run validate && npm run build",
     "inspect": "agent-bundle inspect",
-    "dev": "agent-bundle dev"
+    "dev": "agent-bundle dev",
+    "fix:display-names": "node ./scripts/fix-display-names.mjs"
   },
   "devDependencies": {
     "agent-bundle": "https://pkg.pr.new/ScriptedAlchemy/agent-bundle/agent-bundle@bf98f04f4620b8ff416f040245c6b7a007b7a677"

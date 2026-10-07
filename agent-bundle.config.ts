@@ -21,6 +21,8 @@ import { defineConfig } from 'agent-bundle/config';
  *   hardcodes displayName to plugin.name ("mux"). There is no cursor.displayName
  *   config key; casing cannot be "Mux" in the emitted Cursor artifact without a
  *   compiler change. Local Marketplace installs use plugins/mux (displayName Mux).
+ * Post-build: `npm run fix:display-names` (wired into `npm run build`) rewrites
+ * artifact/** displayName fields from "mux" to "Mux".
  *
  * Claude plugin.json author is also forced to { name: plugin.name } ("mux") by
  * the adapter; full author (Mux / devex@mux.com) appears on Cursor/Codex/portable
