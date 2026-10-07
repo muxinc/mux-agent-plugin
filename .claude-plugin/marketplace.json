@@ -1,0 +1,27 @@
+{
+  "name": "mux",
+  "description": "Official Mux plugin: remote Mux MCP connector plus skills for Video, Live Streams, Mux Data, and Robots.",
+  "owner": {
+    "name": "Mux",
+    "email": "devex@mux.com"
+  },
+  "plugins": [
+    {
+      "name": "mux",
+      "displayName": "Mux",
+      "source": "./plugins/mux",
+      "description": "Connect to Mux with the official remote MCP connector and skills for Video, Live Streams, Mux Data, and Robots.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mux",
+        "email": "devex@mux.com",
+        "url": "https://www.mux.com"
+      },
+      "homepage": "https://www.mux.com",
+      "repository": "https://github.com/muxinc/mux-agent-plugin",
+      "license": "MIT",
+      "category": "development",
+      "keywords": ["mux", "video", "live-streaming", "mux-data", "mcp", "robots"]
+    }
+  ]
+}

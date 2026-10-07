@@ -60,16 +60,46 @@ npx agent-bundle install claude --from artifact --scope user
 npx agent-bundle install codex --from artifact
 ```
 
-## Muse Code — experimental pack
+## Claude Code — validate and install locally
+
+```bash
+claude plugin validate plugins/mux
+claude plugin validate .
+claude plugin marketplace add ./
+claude plugin install mux@mux
+```
+
+## Codex — install locally
+
+```bash
+codex plugin marketplace add ./
+codex plugin add mux@mux
+codex mcp list   # expect mux -> https://mcp.mux.com
+```
+
+## Muse Code — experimental
 
 ```bash
 export MUSE_EXPERIMENTAL_PLUGINS=1
-muse plugins install "$(pwd)/packs/muse" --scope user
+muse plugins validate plugins/mux   # if your Muse build has a validate command
+muse plugins install "$(pwd)/plugins/mux" --scope user
 muse plugins approve mux
 ```
 
-Or use the settings-file `mcp_servers` fallback documented in
-[`packs/muse/README.md`](../packs/muse/README.md).
+Settings-file fallback when experimental plugins are off
+(`~/.config/muse/settings.json`):
+
+```json
+{
+  "mcp_servers": {
+    "mux": {
+      "transport": "streamable_http",
+      "url": "https://mcp.mux.com",
+      "mode": "optional"
+    }
+  }
+}
+```
 
 ## Prompt matrix
 

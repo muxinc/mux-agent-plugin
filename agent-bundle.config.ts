@@ -5,16 +5,18 @@ import { defineConfig } from 'agent-bundle/config';
  *
  * Skills source of truth: plugins/mux/skills (listed explicitly below).
  * Discovery only auto-reads src/skills/; we point at plugins/mux (shared skill
- * source) instead so skill markdown is not duplicated. Muse reuses the same folder via
- * packs/muse/skills → symlink.
+ * source) instead so skill markdown is not duplicated.
  *
- * Cursor marketplace path plugins/mux stays hand-maintained for local cp install;
- * Agent Bundle emits a composite artifact/ for claude, codex, cursor, and portable.
+ * plugins/mux is the hand-maintained, multi-host package that the repo
+ * marketplaces install (.cursor-plugin/, .claude-plugin/, .codex-plugin/,
+ * .muse-plugin/ manifests side by side, real files only — no symlinks).
+ * Agent Bundle additionally emits a composite artifact/ for claude, codex,
+ * cursor, and portable.
  *
- * Muse Code has no Agent Bundle target — see packs/muse/.
+ * Muse Code has no Agent Bundle target — see plugins/mux/.muse-plugin/plugin.json.
  *
  * Display names:
- * - Hand-maintained Cursor/Muse manifests use displayName "Mux".
+ * - Hand-maintained plugins/mux manifests (Cursor/Claude/Codex/Muse) use displayName "Mux".
  * - Claude: claude.displayName / marketplace.plugin.displayName → "Mux".
  * - Codex: codex.interface.displayName + codex.marketplace.displayName → "Mux".
  * - Cursor *artifact* (.cursor-plugin/plugin.json from Agent Bundle): the adapter
@@ -38,7 +40,7 @@ export default defineConfig({
     logo: 'plugins/mux/assets/logo.png',
     metadata: {
       author: { name: 'Mux', email: 'devex@mux.com' },
-      homepage: 'https://www.mux.com/docs/integrations/mcp-server',
+      homepage: 'https://www.mux.com',
       repository: 'https://github.com/muxinc/mux-agent-plugin',
       license: 'MIT',
       keywords: [

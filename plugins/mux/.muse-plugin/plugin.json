@@ -17,35 +17,43 @@
     "skills": [
       {
         "id": "mux",
-        "path": "skills/mux"
+        "path": "skills/mux/SKILL.md",
+        "enabledDefault": true
       },
       {
         "id": "mux-analyze-any-video",
-        "path": "skills/mux-analyze-any-video"
+        "path": "skills/mux-analyze-any-video/SKILL.md",
+        "enabledDefault": true
       },
       {
         "id": "mux-data",
-        "path": "skills/mux-data"
+        "path": "skills/mux-data/SKILL.md",
+        "enabledDefault": true
       },
       {
         "id": "mux-docs",
-        "path": "skills/mux-docs"
+        "path": "skills/mux-docs/SKILL.md",
+        "enabledDefault": true
       },
       {
         "id": "mux-live",
-        "path": "skills/mux-live"
+        "path": "skills/mux-live/SKILL.md",
+        "enabledDefault": true
       },
       {
         "id": "mux-robots",
-        "path": "skills/mux-robots"
+        "path": "skills/mux-robots/SKILL.md",
+        "enabledDefault": true
       },
       {
         "id": "mux-robots-directives",
-        "path": "skills/mux-robots-directives"
+        "path": "skills/mux-robots-directives/SKILL.md",
+        "enabledDefault": true
       },
       {
         "id": "mux-video",
-        "path": "skills/mux-video"
+        "path": "skills/mux-video/SKILL.md",
+        "enabledDefault": true
       }
     ],
     "commands": [],

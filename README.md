@@ -5,8 +5,7 @@ Muse): a shared remote MCP connector (`https://mcp.mux.com`) plus skills for Vid
 Live Streams, Mux Data, and Robots. On every host the user-facing display name is
 **Mux** (plugin id `mux`).
 
-Canonical repository (placeholder until published):
-[github.com/muxinc/mux-agent-plugin](https://github.com/muxinc/mux-agent-plugin)
+Repository: [github.com/muxinc/mux-agent-plugin](https://github.com/muxinc/mux-agent-plugin)
 
 Docs: [Using the Mux MCP Server](https://www.mux.com/docs/integrations/mcp-server)
 
@@ -14,25 +13,27 @@ Docs: [Using the Mux MCP Server](https://www.mux.com/docs/integrations/mcp-serve
 
 ## Hosts
 
-| Host | How it is packaged | Status |
-| --- | --- | --- |
-| **Cursor / Grok Bot** | Hand-maintained `plugins/mux` (Cursor Marketplace shape) **and** Agent Bundle `cursor` / `portable` artifact | Local install documented; marketplace submit is future |
-| **Claude Code** | Agent Bundle `claude` target in `artifact/` | Build locally; not published to a Claude marketplace |
-| **Codex** | Agent Bundle `codex` target in `artifact/` | Build locally; not published |
-| **Muse Code** | Thin native pack in `packs/muse/` (Agent Bundle has **no** Muse target) | Experimental / beta |
-| **Portable** | Agent Plugins open standard (`plugin.json` + `mcp.json`) via Agent Bundle | Emitted into `artifact/` |
+One package, `plugins/mux`, carries a manifest per host side by side. The
+repo root is a self-hosted marketplace (named `mux`) for each host.
 
-This repo does **not** claim anything is published to Cursor Marketplace,
-Claude, or Codex registries yet. Keep marketplace submit / `muxinc` push as
-future work.
+| Host | Plugin manifest (in `plugins/mux`) | Marketplace file (repo root) | Status |
+| --- | --- | --- | --- |
+| **Cursor / Grok Bot** | `.cursor-plugin/plugin.json` + `mcp.json` | `.cursor-plugin/marketplace.json` | Local install documented; Cursor Marketplace submit pending |
+| **Claude Code** | `.claude-plugin/plugin.json` + `.mcp.json` | `.claude-plugin/marketplace.json` | Self-hosted marketplace; ready for Anthropic directory submission |
+| **Codex** | `.codex-plugin/plugin.json` + `.mcp.json` | `.claude-plugin/marketplace.json` (Codex reads it) | Self-hosted marketplace |
+| **Muse Code** | `.muse-plugin/plugin.json` | `.claude-plugin/marketplace.json` (Muse reads it) | Experimental / beta |
+| **Portable** | Agent Plugins standard via Agent Bundle | — | Emitted into `artifact/` by `npm run build` |
+
+See [`plugins/mux/README.md`](plugins/mux/README.md) for the user-facing
+description, install steps, and the Data & privacy section.
 
 ## What you get
 
 - **Connector** — one MCP server (`mux`) at `https://mcp.mux.com`. On Cursor,
   Connect runs Mux OAuth (dashboard.mux.com login + environment picker). No
   access token in the plugin.
-- **Skills** — authored once under `plugins/mux/skills/` and shared into Agent
-  Bundle (`skills:` → `plugins/mux/skills/...`) and Muse (`packs/muse/skills` → symlink):
+- **Skills** — authored once under `plugins/mux/skills/`; every host manifest
+  and Agent Bundle (`skills:` → `plugins/mux/skills/...`) read the same files:
   - `mux` — bootstrap, auth model, safety, routing
   - `mux-docs` — upstream docs discovery (llms.txt / collection indexes)
   - `mux-video` — assets, direct uploads, playback IDs, tracks, signing
@@ -49,17 +50,25 @@ future work.
 Install the host package, then connect `mux` at `https://mcp.mux.com`. Clients
 that support OAuth need no Access Token ID/Secret in config.
 
-Cursor `mcp.json` (and Agent Bundle emissions) are url-only:
+`plugins/mux` ships two MCP files with the same single server:
+
+- `mcp.json` — Cursor format (url-only, transport inferred). The Cursor
+  manifest pins it explicitly with `"mcpServers": "./mcp.json"` so Cursor never
+  picks up `.mcp.json` by accident.
+- `.mcp.json` — Claude Code / Codex format (`"type": "http"`).
 
 ```json
 {
   "mcpServers": {
     "mux": {
+      "type": "http",
       "url": "https://mcp.mux.com"
     }
   }
 }
 ```
+
+Keep both files pointing at the same URL.
 
 Do not paste a personal MCP URL. Do not add a second Mux MCP server.
 
@@ -126,32 +135,36 @@ reads via the same `plugins/mux/skills` paths).
 
 ### Claude Code
 
-```bash
-npm install          # needs Node >= 22.19; Agent Bundle via pkg.pr.new (pre-release)
-npm run build
-npx agent-bundle install claude --from artifact --scope user
-# or follow artifact/INSTALL.md (claude plugin marketplace add / install)
+```text
+/plugin marketplace add muxinc/mux-agent-plugin
+/plugin install mux@mux
 ```
+
+Local checkout: `claude plugin marketplace add ./` then
+`claude plugin install mux@mux`. Validate with `claude plugin validate plugins/mux`
+and `claude plugin validate .`.
 
 ### Codex
 
 ```bash
-npm install
-npm run build
-npx agent-bundle install codex --from artifact
-# or follow artifact/INSTALL.md
+codex plugin marketplace add muxinc/mux-agent-plugin
+codex plugin add mux@mux
 ```
+
+Codex reads the root `.claude-plugin/marketplace.json` and the plugin's
+`.codex-plugin/plugin.json` (display name, skills, `.mcp.json`).
 
 ### Muse Code (experimental)
 
-See [`packs/muse/README.md`](packs/muse/README.md). Short form:
-
 ```bash
 export MUSE_EXPERIMENTAL_PLUGINS=1
-muse plugins install "$(pwd)/packs/muse" --scope user
+muse plugins marketplace add mux https://github.com/muxinc/mux-agent-plugin
+muse plugins install mux@mux
 muse plugins approve mux
 muse mcp login mux   # if OAuth required
 ```
+
+Local checkout: `muse plugins install "$(pwd)/plugins/mux" --scope user`.
 
 Settings-file fallback when experimental plugins are off:
 
@@ -200,8 +213,14 @@ Output: `artifact/` (composite plugin root + `INSTALL.md` +
 `agent-bundle.manifest.json`)
 
 Skills are **not** duplicated: `agent-bundle.config.ts` lists explicit
-`skills:` paths under `plugins/mux/skills/`. Muse uses a symlink to the same
-folder. Edit skills only under `plugins/mux/skills/`.
+`skills:` paths under `plugins/mux/skills/`, and every host manifest in
+`plugins/mux` points at the same folder. Edit skills only under
+`plugins/mux/skills/`. If you add or rename a skill, also update
+`plugins/mux/.muse-plugin/plugin.json` (Muse lists skills explicitly) and the
+`skills:` list in `agent-bundle.config.ts`.
+
+`plugins/mux` must contain real files only — no symlinks and no `.DS_Store`
+(`find plugins/mux -type l -o -name .DS_Store` should print nothing).
 
 > Do **not** set `output.repositoryMarketplace` — it would overwrite the
 > hand-maintained `.cursor-plugin/marketplace.json` that points at
@@ -252,7 +271,8 @@ When ready to publish under the muxinc org:
 ```
 
 After syncing, re-copy `plugins/mux` into `~/.cursor/plugins/local/mux` for
-local Cursor testing. Agent Bundle / Muse pick up the same files via symlink.
+local Cursor testing. Agent Bundle and the other host manifests read the same
+files in place.
 
 ## Repo layout
 
@@ -260,15 +280,20 @@ local Cursor testing. Agent Bundle / Muse pick up the same files via symlink.
 agent-bundle.config.ts          # multi-host Agent Bundle project
 package.json                    # scripts: build / validate / check
 artifact/                       # generated by npm run build (gitignored)
-.cursor-plugin/marketplace.json # Cursor marketplace owner + plugin list
-plugins/mux/                    # Mux plugin (Cursor Marketplace shape; source of truth)
-  .cursor-plugin/plugin.json
-  mcp.json
+.cursor-plugin/marketplace.json # Cursor marketplace (owner + plugin list)
+.claude-plugin/marketplace.json # Claude Code marketplace (also read by Codex and Muse)
+plugins/mux/                    # Mux plugin, all hosts (source of truth)
+  .cursor-plugin/plugin.json    # Cursor (pins mcp.json)
+  .claude-plugin/plugin.json    # Claude Code (+ directory listing fields)
+  .codex-plugin/plugin.json     # Codex (interface.displayName "Mux")
+  .muse-plugin/plugin.json      # Muse Code (skills listed explicitly)
+  mcp.json                      # Cursor MCP config
+  .mcp.json                     # Claude Code / Codex MCP config
   assets/logo.png
   skills/*/SKILL.md
-packs/muse/                     # Muse Code thin pack (experimental)
-  .muse-plugin/plugin.json
-  skills/ → ../../plugins/mux/skills
+  README.md                     # host-neutral README + Data & privacy
+  LICENSE
+scripts/fix-display-names.mjs
 scripts/sync-upstream-skills.sh
 docs/testing.md
 LICENSE

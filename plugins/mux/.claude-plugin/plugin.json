@@ -21,6 +21,9 @@
     "playback",
     "robots"
   ],
-  "logo": "assets/logo.png",
-  "mcpServers": "./mcp.json"
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://www.mux.com/docs/integrations/mcp-server",
+  "supportUrl": "https://www.mux.com/support",
+  "privacyPolicyUrl": "https://www.mux.com/privacy",
+  "termsOfServiceUrl": "https://www.mux.com/terms"
 }
