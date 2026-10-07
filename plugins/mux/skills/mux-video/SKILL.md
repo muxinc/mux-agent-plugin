@@ -42,4 +42,5 @@ Use this skill for on-demand video: assets, uploads, playback, and related Video
 
 - Live ingest / stream keys → `mux-live`
 - Engagement metrics / views / quality → `mux-data`
-- Robots chaptering / summarize jobs → `mux` bootstrap skill + Robots via `execute`
+- Analyze any video / Robots on URL or local file → `mux-analyze-any-video`
+- Robots on an existing Mux asset only → `mux` bootstrap skill + Robots via `execute`

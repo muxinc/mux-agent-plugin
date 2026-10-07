@@ -14,6 +14,7 @@ Docs: [Using the Mux MCP Server](https://www.mux.com/docs/integrations/mcp-serve
 - **Skills** — routers that teach the agent to use Mux Code Mode (`search_docs` + `execute` against `@mux/ts`):
   - `mux` — bootstrap, auth model, safety, routing
   - `mux-video` — assets, direct uploads, playback IDs, tracks, signing / secure playback, delivery usage
+  - `mux-analyze-any-video` — Robots on any source (ingest URL/local file when needed, then analyze)
   - `mux-live` — live streams, simulcast, reconnect, recording to assets
   - `mux-data` — metrics, dimensions, video views, real-time, exports, errors
 
@@ -93,6 +94,7 @@ After Connect, ask for example:
 - Create a live stream and show the stream key
 - Best performing country for streaming over the last month (Mux Data)
 - Run a Robots job to generate chapters for asset `ASSET_ID`
+- Analyze this public video URL with Mux Robots (summarize / chapters)
 
 The agent should prefer Mux MCP tools (`search_docs`, then `execute` with TypeScript against `@mux/ts`). Do not shell out to `mux` CLI unless the user asks.
 

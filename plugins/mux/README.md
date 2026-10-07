@@ -18,6 +18,7 @@ For non-OAuth clients, use Basic `TOKEN_ID:TOKEN_SECRET` against the hosted URL,
 | --- | --- |
 | `mux` | Bootstrap, Code Mode (`search_docs` + `execute`), auth, safety, routing |
 | `mux-video` | Assets, direct uploads, playback IDs, tracks, signing keys, delivery usage, DRM |
+| `mux-analyze-any-video` | Robots on any source: ingest URL/local file into Mux when needed, then analyze |
 | `mux-live` | Live streams, stream keys, simulcast, reconnect windows, recording |
 | `mux-data` | Metrics, dimensions, filters, video views, real-time, exports, errors |
 
