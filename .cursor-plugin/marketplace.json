@@ -5,14 +5,14 @@
     "email": "open-source@mux.com"
   },
   "metadata": {
-    "description": "Official Mux plugins for Cursor — remote MCP connector plus skills for Video, Live, Data, and Robots.",
+    "description": "Mux Agent Plugin for the Cursor Marketplace — remote MCP connector plus skills for Video, Live, Data, and Robots (also packaged for Grok Bot, Claude Code, Codex, and Muse).",
     "version": "1.0.0"
   },
   "plugins": [
     {
       "name": "mux",
       "source": "./plugins/mux",
-      "description": "Connect Cursor to Mux: remote MCP at mcp.mux.com plus skills for video assets, live streams, Mux Data, and Code Mode."
+      "description": "Mux Agent Plugin: remote MCP at mcp.mux.com plus skills for video assets, live streams, Mux Data, and Code Mode."
     }
   ]
 }

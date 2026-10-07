@@ -1,11 +1,11 @@
 import { defineConfig } from 'agent-bundle/config';
 
 /**
- * Agent Bundle project wrapping the Mux Cursor plugin.
+ * Agent Bundle project for the Mux Agent Plugin.
  *
  * Skills source of truth: plugins/mux/skills (listed explicitly below).
- * Discovery only auto-reads src/skills/; we point at the Cursor plugin folder
- * instead so skill markdown is not duplicated. Muse reuses the same folder via
+ * Discovery only auto-reads src/skills/; we point at plugins/mux (shared skill
+ * source) instead so skill markdown is not duplicated. Muse reuses the same folder via
  * packs/muse/skills → symlink.
  *
  * Cursor marketplace path plugins/mux stays hand-maintained for local cp install;
@@ -19,7 +19,7 @@ export default defineConfig({
   plugin: {
     name: 'mux',
     description:
-      'Connect to Mux with the official remote MCP connector and skills for Video, Live Streams, Mux Data, and Robots.',
+      'Mux Agent Plugin: remote MCP connector plus skills for Video, Live Streams, Mux Data, and Robots — for Cursor, Grok Bot, Claude Code, Codex, and Muse.',
     logo: 'plugins/mux/assets/logo.png',
     metadata: {
       author: { name: 'Mux', email: 'open-source@mux.com' },

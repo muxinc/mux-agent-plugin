@@ -1,8 +1,8 @@
-# Mux for Muse Code (experimental)
+# Mux Agent Plugin for Muse Code (experimental)
 
-Thin Muse-native plugin pack. **Agent Bundle has no Muse target**, so this pack
-lives beside the Cursor plugin and shares the same skill markdown via symlink
-(`packs/muse/skills` → `plugins/mux/skills`).
+Thin Muse-native pack of the **Mux Agent Plugin**. **Agent Bundle has no Muse
+target**, so this pack lives beside `plugins/mux` and shares the same skill
+markdown via symlink (`packs/muse/skills` → `plugins/mux/skills`).
 
 > Muse Code plugins are **beta / experimental**. The wire contract may change.
 > Prefer the settings-file MCP fallback below if experimental plugins are off.
@@ -10,7 +10,7 @@ lives beside the Cursor plugin and shares the same skill markdown via symlink
 ## What you get
 
 - Remote MCP: `https://mcp.mux.com` (HTTP / streamable HTTP)
-- Skills (same bodies as Cursor): `mux`, `mux-docs`, `mux-video`, `mux-live`,
+- Skills (same bodies as the Mux Agent Plugin): `mux`, `mux-docs`, `mux-video`, `mux-live`,
   `mux-data`, `mux-robots`, `mux-robots-directives`, `mux-analyze-any-video`
 
 ## Install (experimental native plugin)
@@ -57,7 +57,7 @@ Token with Basic auth or a local `@mux/mcp` install — see the root README
 “Token / local fallback”. This pack does **not** ship a local Mux MCP binary.
 
 Skills can also be discovered from shared Agent Skills roots; the plugin pack
-is the preferred path so skill routing matches Cursor.
+is the preferred path so skill routing matches other Mux Agent Plugin hosts.
 
 ## Layout
 

@@ -1,8 +1,8 @@
 {
   "name": "mux",
-  "displayName": "Mux",
+  "displayName": "Mux Agent Plugin",
   "version": "1.0.0",
-  "description": "Connect Cursor to Mux with the official remote MCP connector and skills for Video, Live Streams, Mux Data, and Robots.",
+  "description": "Mux Agent Plugin: connect to Mux with the official remote MCP connector and skills for Video, Live Streams, Mux Data, and Robots.",
   "author": {
     "name": "Mux",
     "email": "open-source@mux.com"
