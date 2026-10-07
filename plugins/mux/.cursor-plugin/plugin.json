@@ -5,7 +5,7 @@
   "description": "Mux Agent Plugin: connect to Mux with the official remote MCP connector and skills for Video, Live Streams, Mux Data, and Robots.",
   "author": {
     "name": "Mux",
-    "email": "open-source@mux.com"
+    "email": "devex@mux.com"
   },
   "homepage": "https://www.mux.com/docs/integrations/mcp-server",
   "repository": "https://github.com/muxinc/cursor-plugin",

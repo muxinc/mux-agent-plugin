@@ -9,8 +9,7 @@ Canonical repository (placeholder until published):
 
 Docs: [Using the Mux MCP Server](https://www.mux.com/docs/integrations/mcp-server)
 
-> **Author contact:** plugin metadata uses `open-source@mux.com`. TODO: confirm
-> the preferred public contact email with Mux before marketplace submit.
+> **Author contact:** plugin metadata uses `devex@mux.com`.
 
 ## Hosts
 

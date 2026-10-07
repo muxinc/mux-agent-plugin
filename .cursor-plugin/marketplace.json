@@ -2,7 +2,7 @@
   "name": "mux",
   "owner": {
     "name": "Mux",
-    "email": "open-source@mux.com"
+    "email": "devex@mux.com"
   },
   "metadata": {
     "description": "Mux Agent Plugin for the Cursor Marketplace — remote MCP connector plus skills for Video, Live, Data, and Robots (also packaged for Grok Bot, Claude Code, Codex, and Muse).",

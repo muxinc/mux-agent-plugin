@@ -22,7 +22,7 @@ export default defineConfig({
       'Mux Agent Plugin: remote MCP connector plus skills for Video, Live Streams, Mux Data, and Robots — for Cursor, Grok Bot, Claude Code, Codex, and Muse.',
     logo: 'plugins/mux/assets/logo.png',
     metadata: {
-      author: { name: 'Mux', email: 'open-source@mux.com' },
+      author: { name: 'Mux', email: 'devex@mux.com' },
       homepage: 'https://www.mux.com/docs/integrations/mcp-server',
       repository: 'https://github.com/muxinc/cursor-plugin',
       license: 'MIT',
