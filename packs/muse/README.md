@@ -63,11 +63,15 @@ is the preferred path so skill routing matches other Mux hosts.
 
 ```text
 packs/muse/
-  .muse-plugin/plugin.json
+  .muse-plugin/plugin.json   # displayName Mux; logo: assets/logo.png
   skills/          → symlink to ../../plugins/mux/skills
   assets/logo.png  → symlink to ../../plugins/mux/assets/logo.png
   README.md
 ```
+
+Logo parity with Cursor: `assets/logo.png` is a symlink to the same file as
+`plugins/mux/assets/logo.png`, and `.muse-plugin/plugin.json` references it via
+`"logo": "assets/logo.png"` (ignored if Muse’s schema drops unknown fields).
 
 Do not duplicate skill markdown here. Edit skills under `plugins/mux/skills/`.
 

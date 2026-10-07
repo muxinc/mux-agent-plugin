@@ -13,6 +13,19 @@ import { defineConfig } from 'agent-bundle/config';
  *
  * Muse Code has no Agent Bundle target — see packs/muse/.
  *
+ * Display names:
+ * - Hand-maintained Cursor/Muse manifests use displayName "Mux".
+ * - Claude: claude.displayName / marketplace.plugin.displayName → "Mux".
+ * - Codex: codex.interface.displayName + codex.marketplace.displayName → "Mux".
+ * - Cursor *artifact* (.cursor-plugin/plugin.json from Agent Bundle): the adapter
+ *   hardcodes displayName to plugin.name ("mux"). There is no cursor.displayName
+ *   config key; casing cannot be "Mux" in the emitted Cursor artifact without a
+ *   compiler change. Local Marketplace installs use plugins/mux (displayName Mux).
+ *
+ * Claude plugin.json author is also forced to { name: plugin.name } ("mux") by
+ * the adapter; full author (Mux / devex@mux.com) appears on Cursor/Codex/portable
+ * and Claude marketplace plugin entries via plugin.metadata.
+ *
  * Pinned preview: agent-bundle@bf98f04 (pkg.pr.new, 2026-10-05). Not on npm registry.
  */
 export default defineConfig({
@@ -59,22 +72,33 @@ export default defineConfig({
       },
     },
   },
-  // Host UI titles: always "Mux" (plugin.id stays mux).
+  // Host UI titles: "Mux" wherever Agent Bundle admits a displayName field.
   claude: {
     displayName: 'Mux',
     marketplace: {
+      owner: { name: 'Mux', email: 'devex@mux.com' },
       plugin: {
         displayName: 'Mux',
+        author: { name: 'Mux', email: 'devex@mux.com' },
       },
     },
   },
   codex: {
     interface: {
       displayName: 'Mux',
+      developerName: 'Mux',
     },
     marketplace: {
       displayName: 'Mux',
     },
+    author: { name: 'Mux', email: 'devex@mux.com' },
+  },
+  cursor: {
+    author: { name: 'Mux', email: 'devex@mux.com' },
+    // No cursor.displayName — adapter always emits displayName === plugin.name.
+  },
+  portable: {
+    author: { name: 'Mux', email: 'devex@mux.com' },
   },
   targets: ['claude', 'codex', 'cursor', 'portable'],
   // Keep existing .cursor-plugin/marketplace.json (points at plugins/mux).

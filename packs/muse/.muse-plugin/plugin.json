@@ -4,6 +4,11 @@
   "displayName": "Mux",
   "version": "1.0.0",
   "description": "Connect to Mux with the official remote MCP connector and skills for Video, Live Streams, Mux Data, and Robots.",
+  "logo": "assets/logo.png",
+  "author": {
+    "name": "Mux",
+    "email": "devex@mux.com"
+  },
   "compat": {
     "source": "native",
     "manifestDir": ".muse-plugin"
@@ -53,9 +58,5 @@
       }
     ],
     "reminders": []
-  },
-  "author": {
-    "name": "Mux",
-    "email": "devex@mux.com"
   }
 }

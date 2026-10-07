@@ -12,7 +12,7 @@
     {
       "name": "mux",
       "source": "./plugins/mux",
-      "description": "Connect to Mux: remote MCP at mcp.mux.com plus skills for video assets, live streams, Mux Data, and Code Mode."
+      "description": "Connect to Mux with the official remote MCP connector and skills for Video, Live Streams, Mux Data, and Robots."
     }
   ]
 }
