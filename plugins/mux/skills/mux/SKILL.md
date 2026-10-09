@@ -9,11 +9,11 @@ description: >
 
 # Mux
 
-Connect Cursor to Mux through this plugin’s MCP server (`mux` at `https://mcp.mux.com`), then drive the account with **Code Mode**.
+Connect your agent to Mux through this plugin’s MCP server (`mux` at `https://mcp.mux.com`), then drive the account with **Code Mode**.
 
 ## Connect
 
-1. **Settings → Tools & MCP** → connect `mux`.
+1. Connect the `mux` MCP server in your host (Cursor: **Settings → Tools & MCP**; ChatGPT/Codex/Claude: connect the plugin’s Mux connector when prompted).
 2. Complete Mux OAuth: log in at dashboard.mux.com and choose an environment.
 3. Do not add a second Mux MCP server. Do not paste a personal MCP URL.
 4. Do not put Access Token ID/Secret in the plugin. Marketplace path is OAuth.

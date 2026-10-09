@@ -154,6 +154,11 @@ codex plugin add mux@mux
 Codex reads the root `.claude-plugin/marketplace.json` and the plugin's
 `.codex-plugin/plugin.json` (display name, skills, `.mcp.json`).
 
+**OpenAI plugin directory (ChatGPT + Codex):** `npm run build:openai` writes
+`dist/mux-openai-plugin.zip` for https://platform.openai.com/plugins. Listing fields,
+review test cases, and the submission checklist are in
+[`docs/openai-submission.md`](docs/openai-submission.md).
+
 ### Muse Code (experimental)
 
 ```bash
