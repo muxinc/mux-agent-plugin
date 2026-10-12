@@ -63,7 +63,7 @@ Who it is for: developers and video teams who use Mux and want to inspect and ma
 
 How it works: you sign in with your Mux account through OAuth and choose an environment. The plugin can only access the environment you authorize. It uses two tools: search_docs, which searches the Mux SDK documentation, and execute, which runs short TypeScript programs against the official Mux SDK in an isolated sandbox that can only reach the Mux API.
 
-Limitations: requires a Mux account. Creating assets, uploads, live streams, or Robots jobs changes your account and may incur usage under your Mux plan, so the assistant confirms with you first. Mux Robots runs only on Mux Video assets and requires Robots access on your account; videos hosted elsewhere must first be ingested from a direct media file URL you have rights to.
+Requires a Mux account.
 ```
 
 ## 3. Release notes — v1.0.0
