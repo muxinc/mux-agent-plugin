@@ -1,6 +1,6 @@
 {
   "name": "mux",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Connect to Mux for video, livestreams, Mux Data, and Mux Robots.",
   "author": {
     "name": "Mux",
@@ -106,7 +106,7 @@
         "commerce_description": "This plugin does not sell products or process payments. It accesses features already included in the user's existing Mux account."
       },
       "publication": {
-        "release_notes": "Initial public release (v1.0.0). Connects ChatGPT and Codex to the hosted Mux MCP server (https://mcp.mux.com, OAuth) with two tools: search_docs (search Mux SDK documentation) and execute (run TypeScript against the official Mux SDK in an isolated sandbox). Bundles 8 skills: mux (setup and routing), mux-docs, mux-video, mux-live, mux-data, mux-robots, mux-robots-directives, and mux-analyze-any-video."
+        "release_notes": "Initial public release (v1.0.2). Connects ChatGPT and Codex to the hosted Mux MCP server (https://mcp.mux.com, OAuth) with two tools: search_docs (search Mux SDK documentation) and execute (run TypeScript against the official Mux SDK in an isolated sandbox). Bundles 8 skills: mux (setup and routing), mux-docs, mux-video, mux-live, mux-data, mux-robots, mux-robots-directives, and mux-analyze-any-video."
       }
     }
   }

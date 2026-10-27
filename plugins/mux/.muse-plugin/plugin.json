@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "name": "mux",
   "displayName": "Mux",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Connect to Mux for video, livestreams, Mux Data, and Mux Robots.",
   "logo": "assets/logo.png",
   "author": {
