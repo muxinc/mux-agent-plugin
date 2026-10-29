@@ -1,7 +1,7 @@
 {
   "name": "mux",
-  "version": "1.0.0",
-  "description": "Connect to Mux with the official remote MCP connector and skills for Video, Live Streams, Mux Data, and Robots.",
+  "version": "1.0.1",
+  "description": "Connect to Mux for video, livestreams, Mux Data, and Mux Robots.",
   "author": {
     "name": "Mux",
     "email": "devex@mux.com",
@@ -24,8 +24,8 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Mux",
-    "shortDescription": "Video, data & AI for Mux",
-    "longDescription": "Mux is video infrastructure for developers. This plugin connects ChatGPT and Codex to your Mux account through the official Mux MCP server (https://mcp.mux.com) and adds skills for Mux Video, Live Streams, Mux Data, and Mux Robots.\n\nUse it to:\n- Look up current Mux API, SDK, and guide documentation.\n- List and inspect video assets, create direct upload URLs, ingest videos from public media URLs, and manage playback IDs, captions, playback restrictions, and signing keys.\n- Create and manage live streams, stream keys, and simulcast targets.\n- Query Mux Data for views, playback errors, and quality-of-experience metrics, broken down by country, device, or title.\n- Run Mux Robots AI workflows such as summaries, chapters, moderation, captions, and translations on Mux Video assets.\n\nWho it is for: developers and video teams who use Mux and want to inspect and manage their video from a conversation.\n\nHow it works: you sign in with your Mux account through OAuth and choose an environment. The plugin can only access the environment you authorize. It uses two tools: search_docs, which searches the Mux SDK documentation, and execute, which runs short TypeScript programs against the official Mux SDK in an isolated sandbox that can only reach the Mux API.\n\nRequires a Mux account.",
+    "shortDescription": "Mux video, data & Robots",
+    "longDescription": "Mux is video infrastructure for developers, with Mux Robots for AI video workflows. This plugin connects ChatGPT and Codex to your Mux account through the official Mux MCP server (https://mcp.mux.com) and adds skills for Mux Video, Live Streams, Mux Data, and Mux Robots.\n\nUse it to:\n- Look up current Mux API, SDK, and guide documentation.\n- List and inspect video assets, create direct upload URLs, ingest videos from public media URLs, and manage playback IDs, captions, playback restrictions, and signing keys.\n- Create and manage live streams, stream keys, and simulcast targets.\n- Query Mux Data for views, playback errors, and quality-of-experience metrics, broken down by country, device, or title.\n- Run Mux Robots AI workflows such as summaries, chapters, moderation, captions, and translations on Mux Video assets.\n\nWho it is for: developers and video teams who use Mux and want to inspect and manage their video from a conversation.\n\nHow it works: you sign in with your Mux account through OAuth and choose an environment. The plugin can only access the environment you authorize. It uses two tools: search_docs, which searches the Mux SDK documentation, and execute, which runs short TypeScript programs against the official Mux SDK in an isolated sandbox that can only reach the Mux API.\n\nRequires a Mux account.",
     "developerName": "Mux",
     "category": "Developer Tools",
     "capabilities": [

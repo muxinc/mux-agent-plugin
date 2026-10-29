@@ -5,14 +5,14 @@
     "email": "devex@mux.com"
   },
   "metadata": {
-    "description": "Official Mux plugins for Cursor \u2014 remote MCP connector plus skills for Video, Live, Data, and Robots (also packaged for Grok Bot, Claude Code, Codex, and Muse).",
-    "version": "1.0.0"
+    "description": "Official Mux plugins for Cursor \u2014 remote MCP connector plus skills for Video, Live, Data, and Mux Robots (also packaged for Grok Bot, Claude Code, Codex, and Muse).",
+    "version": "1.0.1"
   },
   "plugins": [
     {
       "name": "mux",
       "source": "./plugins/mux",
-      "description": "Connect to Mux with the official remote MCP connector and skills for Video, Live Streams, Mux Data, and Robots."
+      "description": "Connect to Mux for video, livestreams, Mux Data, and Mux Robots."
     }
   ]
 }

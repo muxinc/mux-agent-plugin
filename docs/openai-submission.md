@@ -28,7 +28,7 @@ skills/{mux,mux-docs,mux-video,mux-live,mux-data,mux-robots,mux-robots-directive
 | Package name (id) | `mux` |
 | Version | `1.0.0` |
 | Display name | Mux (3 chars) |
-| Short description (subtitle) | Video, data & AI for Mux (24/30 chars) |
+| Short description (subtitle) | Mux video, data & Robots (24/30 chars) |
 | Developer name | Mux (dashboard overrides with the verified identity) |
 | Category | Developer Tools |
 | Capabilities | Search Mux documentation; Manage video assets and uploads; Manage live streams; Query Mux Data analytics; Run Mux Robots AI workflows |
