@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Official Mux plugins for Cursor \u2014 remote MCP connector plus skills for Video, Live, Data, and Mux Robots (also packaged for Grok Bot, Claude Code, Codex, and Muse).",
-    "version": "1.0.1"
+    "version": "1.1.0"
   },
   "plugins": [
     {
