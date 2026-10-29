@@ -29,7 +29,7 @@ exposes two tools:
 | `mux-video` | Assets, direct uploads, playback IDs and URLs, tracks and captions, playback restrictions, signing keys, DRM, delivery usage |
 | `mux-live` | Live streams, stream keys, RTMP ingest, reconnect windows, simulcast targets, recording to assets |
 | `mux-data` | Mux Data metrics, dimensions, filters, video views, real-time monitoring, exports, playback errors |
-| `mux-robots` | Robots workflows on an existing Mux asset: summarize, chapters, moderation, premium captions, translation, key moments, scenes, thumbnails, ask-questions |
+| `mux-robots` | Robots (GA, v1 API) workflows on an existing Mux asset: analyze structure (including scenes), summarize, chapters, contextual text, moderation, premium and edited captions, translation, key moments, thumbnails, engagement insights, ask-questions |
 | `mux-robots-directives` | Composing Robots Directives into multi-step pipelines (for example captions then translate), including attaching them at asset creation |
 | `mux-analyze-any-video` | Running Robots on a video that is not yet a Mux asset by ingesting it into Mux first |
 

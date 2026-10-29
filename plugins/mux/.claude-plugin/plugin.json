@@ -1,7 +1,7 @@
 {
   "name": "mux",
   "displayName": "Mux",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Connect to Mux for video, livestreams, Mux Data, and Mux Robots.",
   "author": {
     "name": "Mux",

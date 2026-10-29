@@ -110,6 +110,8 @@ Settings-file fallback when experimental plugins are off
 | Create a direct upload | `mux-video`; confirm write intent |
 | Create a live stream | `mux-live` |
 | Best country for streaming last month | `mux-data` |
-| Generate chapters with Robots | `mux` bootstrap → `execute` Robots APIs |
+| Generate chapters with Robots | `mux-robots` → `execute` with `client.robots.jobs.generateChapters` (v1) |
+| Find the scenes in asset `ASSET_ID` | `mux-robots` → `analyzeStructure`, reads `outputs.scenes` (no `find-scenes` in v1) |
+| Auto-caption and translate every new upload to Spanish | `mux-robots-directives` → v1 `resources` + `bindings`, `output_language_code`; confirms before create |
 
 Destructive ops are not specially gated — use read-only tokens when exploring.

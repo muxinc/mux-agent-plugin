@@ -40,7 +40,7 @@ Workflow:
 | --- | --- |
 | API shapes, SDK/CLI docs, guides, webhooks specs, “what does Mux docs say” | **`mux-docs`** (prefer over memory / web search; fetch live docs) |
 | Assets, uploads, playback IDs, tracks, signing / secure playback, delivery usage, DRM, vocabularies | `mux-video` |
-| Robots jobs on an existing Mux asset (summarize, chapters, captions, …) | `mux-robots` |
+| Robots jobs on an existing Mux asset (analyze structure, summarize, chapters, captions, …) — v1 GA API | `mux-robots` |
 | Directives pipelines (compose workflows, resources, attach on ingest) | `mux-robots-directives` |
 | Analyze / Robots on a URL, local file, or non-Mux video (ingest first when needed) | `mux-analyze-any-video` |
 | Live streams, stream keys, simulcast, reconnect, live → asset | `mux-live` |
@@ -56,7 +56,7 @@ Agents should cover the same ground as Mux CLI via SDK in `execute`:
 - Assets, Live Streams, Uploads, Playback ID lookup, Playback Restrictions
 - Signing Keys & Secure Playback
 - Transcription Vocabularies, Delivery Usage, DRM Configurations
-- Robots, Mux Data
+- Robots (v1 GA via `client.robots`; `client.robotsV0` is the deprecated Beta), Mux Data
 - Auth & environment (OAuth environment picker; or token-scoped environment)
 - Webhook verify / unwrap (forwarding is a local CLI concern — do not assume MCP can open local ports)
 

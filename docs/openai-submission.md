@@ -26,7 +26,7 @@ skills/{mux,mux-docs,mux-video,mux-live,mux-data,mux-robots,mux-robots-directive
 | Field | Value |
 |---|---|
 | Package name (id) | `mux` |
-| Version | `1.0.0` |
+| Version | `1.1.0` |
 | Display name | Mux (3 chars) |
 | Short description (subtitle) | Mux video, data & Robots (24/30 chars) |
 | Developer name | Mux (dashboard overrides with the verified identity) |
@@ -66,10 +66,10 @@ How it works: you sign in with your Mux account through OAuth and choose an envi
 Requires a Mux account.
 ```
 
-## 3. Release notes — v1.0.0
+## 3. Release notes — v1.1.0
 
 ```
-Initial public release (v1.0.0). Connects ChatGPT and Codex to the hosted Mux MCP server (https://mcp.mux.com, OAuth) with two tools: search_docs (search Mux SDK documentation) and execute (run TypeScript against the official Mux SDK in an isolated sandbox). Bundles 8 skills: mux (setup and routing), mux-docs, mux-video, mux-live, mux-data, mux-robots, mux-robots-directives, and mux-analyze-any-video.
+Initial public release (v1.1.0). Connects ChatGPT and Codex to the hosted Mux MCP server (https://mcp.mux.com, OAuth) with two tools: search_docs (search Mux SDK documentation) and execute (run TypeScript against the official Mux SDK in an isolated sandbox). Bundles 8 skills: mux (setup and routing), mux-docs, mux-video, mux-live, mux-data, mux-robots, mux-robots-directives, and mux-analyze-any-video.
 ```
 
 ## 4. Review test cases (imported from the ZIP; read-only in dashboard)
